@@ -61,7 +61,7 @@
   </div>
 
   <script>
-    const box = document.querySelector('.box');
+    const box = document.querySelector('.box')
     box.addEventListener('click', function() {
       let first = 'opening';
       let second = 'open';
@@ -71,11 +71,11 @@
       }
 
       this.classList.toggle(first);
+      // an arrow function doesn't change the value of 'this'
       setTimeout(() => {
-        console.log(this);
         this.classList.toggle(second);
-      }, 500);
-    });
+      }, 500)
+    })
   </script>
 
 </body>
