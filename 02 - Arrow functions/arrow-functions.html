@@ -9,27 +9,26 @@
   const names = ['wes', 'kait', 'lux'];
 
   const fullNames = names.map(function(name) {
-    return `${name} bos`;
-  });
+    return `${name} son`
+  })
 
-  const fullNames2 = names.map((name) => {
-    return `${name} bos`;
-  });
+  console.log(fullNames)
 
-  const fullNames3 = names.map(name => {
-    return `${name} bos`;
-  });
+  const fullNamesArrow = names.map(name => `${name} son`)
 
-  const fullNames4 = names.map(name => `${name} bos`);
+  console.log('arrow', fullNamesArrow)
 
-  const fullNames5 = names.map(() => `cool bos`);
-
-  const sayMyName = (name) => {
-    alert(`Hello ${name}!`)
+  // a named function
+  function sayMyName(name) {
+    alert(`hi ${name}!`)
   }
 
-  sayMyName('Wes');
+  // an anonomous function
+  const sayHiThere = (name) => {
+    alert(`Hi there ${name}`)
+  }
 
+  sayHiThere('Nick')
 </script>
 </body>
 </html>
