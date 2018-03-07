@@ -12,12 +12,12 @@
     keywords: ['pale', 'cloudy', 'spiced', 'crisp']
   };
 
-  function renderKeywords(keywords) {
+  function renderKeywords(array) {
     return `
       <ul>
-        ${keywords.map(keyword => `<li>${keyword}</li>`).join('')}
+      ${array.map(item => `<li>${item}</li>`).join('')}
       </ul>
-    `;
+    `
   }
 
   const markup = `
@@ -28,7 +28,8 @@
     </div>
   `;
 
-  document.body.innerHTML = markup;
+  
+  document.body.innerHTML = markup
 
 </script>
 </body>
