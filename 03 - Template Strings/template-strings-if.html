@@ -15,14 +15,12 @@
   const markup = `
     <div class="song">
       <p>
-        ${song.name} — ${song.artist}
-        ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+        ${song.name} - ${song.artist}
+        ${song.featuring ? `(featuring ${song.featuring})` : ``}
       </p>
     </div>
-  `;
-
-  document.body.innerHTML = markup;
-
+  `
+  document.body.innerHTML = markup
 </script>
 </body>
 </html>
