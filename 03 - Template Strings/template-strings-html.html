@@ -7,22 +7,22 @@
 <body>
 <script>
   const person = {
-    name: 'Wes',
+    name: 'Nick',
     job: 'Web Developer',
-    city: 'Hamilton',
-    bio: 'Wes is a really cool guy that loves to teach web development!',
+    city: 'Melbourne',
+    bio: 'Nick likes to code and go to the gym... thats it... ',
   };
 
   const markup = `
     <div class="person">
-      <h2>
-        ${person.name}
-        <span class="job">${person.job}</span>
-      </h2>
-      <p class="location">${person.city}</p>
+      <h2>${person.name}</h2>
+      <span class="job">${person.job}</span>
+      <h4>${person.city}</h4>
+      <br>
+      <p class="location">Bio:</p>
       <p class="bio">${person.bio}</p>
     </div>
-  `;
+  `
 
   console.log(markup);
   document.body.innerHTML = markup;
