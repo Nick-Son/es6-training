@@ -14,9 +14,17 @@
     sugar: 10
   };
 
+  // Object.keys will turn the object into an array of it's keys, and wont include the values
+  for (const prop of Object.keys(apple)) {
+    const value = apple[prop]
+    console.log(prop, value);
+  }
+
+  // or
+
   for (const prop in apple) {
-    const value = apple[prop];
-    console.log(value, prop);
+    const value = apple[prop]
+    console.log(prop, value);
   }
 
 </script>
