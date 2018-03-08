@@ -7,42 +7,47 @@
 <body>
 <script>
   /* eslint-disable */
-   Array.prototype.shuffle = function() {
-     var i = this.length, j, temp;
-     if ( i == 0 ) return this;
-     while ( --i ) {
-      j = Math.floor( Math.random() * ( i + 1 ) );
-      temp = this[i];
-      this[i] = this[j];
-      this[j] = temp;
-    }
-    return this;
-  };
+
 
   const cuts = ['Chuck', 'Brisket', 'Shank', 'Short Rib'];
 
-  cuts.shop = 'MM MEats';
-
-  // for (let i = 0; i < cuts.length; i++) {
-  //   console.log(cuts[i]);
-  // }
-
-  // cuts.forEach((cut) => {
-  //   console.log(cut);
-  //   if(cut === 'Brisket') {
-  //     continue;
-  //   }
-  // });
-
-  // for (const index in cuts) {
-  //   console.log(cuts[index]);
-  // }
-
   for (const cut of cuts) {
-    if(cut === 'Brisket') {
-      continue;
+    console.log(cut)
+  }
+
+  console.log('-------this is a cheap line break lul-------- ')
+
+  // this will iterate of the cuts array iterator, returning an array for each item, containing the index and the value
+  for (const cut of cuts.entries()) {
+    console.log(cut)
+  }
+
+  console.log('-------this is a cheap line break lul-------- ')
+
+  // destructure the variable we create
+  for (const [index, cut] of cuts.entries()) {
+    console.log(`${cut} is item number ${index + 1}`)
+  }
+  
+  console.log('-------this is a cheap line break lul-------- ')
+
+  function addUpNumbers() {
+    // console.log(arguments)
+    let total = 0
+    for (const num of arguments) {
+      total += num
     }
-    console.log(cut);
+    return total
+  }
+
+  const numbers = addUpNumbers(12,2,12,23,441,14,2434,56)
+
+  console.log(numbers)
+
+  // iterating over a string
+  const name = 'Nick Sonner'
+  for (const char of name) {
+    console.log(char)
   }
 
 </script>
