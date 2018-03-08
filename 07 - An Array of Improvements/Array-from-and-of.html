@@ -11,25 +11,25 @@
   </div>
 <body>
 <script>
-  // const people = document.querySelectorAll('.people p');
-  // const peopleArray = Array.from(people, person => {
-  //   console.log(person);
-  //   return person.textContent;
-  // });
-  // console.log(peopleArray);
 
-  // // const names = people.map(person => person.textContent);
+  // const people = document.querySelectorAll('p')
+  // // Array.from() can take a second argument which is a map function.
+  // // We can use this callback function to further augment the output
+  // const names = Array.from(people, person => {
+  //   return person.textContent
+  // })
+  // console.log(people, names)
 
   function sumAll() {
-    const nums = Array.from(arguments);
-    return nums.reduce((prev, next) => prev + next, 0);
+    console.log(arguments)
+    const numbers = Array.from(arguments)
+    return numbers.reduce((prev, next) => prev + next, 0)
   }
 
-  sumAll(2, 34, 23, 234, 234, 234234, 234234, 2342);
+  const result = sumAll(12,2,345,225,63,2,342,13,1)
 
-  const ages = Array.of(12,4,23,62,34);
-  console.log(ages);
-
+  const mixedArray = Array.of(12, 'hi', {name: 'Nick'}, 'Wat?', [1, 2])
+  console.log(mixedArray)
 </script>
 </body>
 </html>
