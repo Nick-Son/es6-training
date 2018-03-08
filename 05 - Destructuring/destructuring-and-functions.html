@@ -16,12 +16,27 @@
     return converted;
   }
 
-  function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
-    return total + (tip * total) + (tax * total);
+  // const hundo = convertCurrency(100)
+  // console.log(hundo)
+
+  // const { USD, GPB, AUD, MEX } = convertCurrency(100)
+  // console.log(USD, GPB, AUD, MEX)
+
+  function tipCalculator({ total, tip = 0.15, tax = 0.13 }) {
+    return total + (total * tip) + (total * tax)
   }
 
-  const bill = tipCalc({ tip: 0.20, total: 200 });
-  console.log(bill);
+  // by giving all the arguments a default value, the function can be run without being supplied arguments
+  // BUT, the object of default arguments must have a default value of an empty object
+  function tipCalculatorV2({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+    return total + (total * tip) + (total * tax)
+  }
+
+  const bill = tipCalculator({total: 24, tax: 0.20})
+  console.log(Math.round(bill, -1))
+
+  const newBill = tipCalculatorV2()
+  console.log(newBill)
 
 </script>
 </body>
