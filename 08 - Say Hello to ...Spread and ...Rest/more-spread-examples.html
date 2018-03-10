@@ -11,8 +11,10 @@
     <p>Randy</p>
   </div>
 <script>
-  const people = Array.from(document.querySelectorAll('.people p'));
-  const names = people.map((person) => person.textContent );
+  const people = [...document.querySelectorAll('p')]
+  console.log(people)
+  const names = people.map(person => person.textContent)
+  console.log(names)
 
   const deepDish = {
     pizzaName: 'Deep Dish',
@@ -20,21 +22,21 @@
     ingredients: ['Marinara', 'Italian Sausage', 'Dough', 'Cheese']
   };
 
-  const shoppingList = ['Milk', 'Flour', ...deepDish.ingredients];
-  // console.log(shoppingList);
+  const shoppingList = ['Milk', 'eggs',  ...deepDish.ingredients]
+  console.log(shoppingList)
 
   const comments = [
-    { id: 209384, text: 'I love your dog!' },
-    { id: 523423, text: 'Cuuute! 🐐' },
-    { id: 632429, text: 'You are so dumb' },
-    { id: 192834, text: 'Nice work on this wes!' },
-  ];
-  const id = 632429;
-  const commentIndex = comments.findIndex(comment => comment.id === id);
+    {id: 001, text: 'nice object brah...'},
+    {id: 002, text: 'Is anyone here?'},
+    {id: 003, text: 'Wow! such comment'},
+    {id: 004, text: 'This is worthy of a commit'},
+  ]
 
-  const newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
-  console.log(newComments);
+  const commentToDelete = comments.findIndex(comment => comment.id === 002)
+  console.log(comments[commentToDelete])
 
+  const newComments = [...comments.slice(0, commentToDelete), ...comments.slice(commentToDelete + 1)]
+  console.log(newComments)
 </script>
 </body>
 </html>
