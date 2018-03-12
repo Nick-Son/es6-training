@@ -6,6 +6,8 @@
 </head>
 <body>
 <script>
+  // the new Promise syntax (constructor syntax) is used as the function it includes, doesn't support promises
+  // From MDN: constructor is primarily used to wrap functions that do not already support promises.
   const p = new Promise((resolve, reject) => {
     setTimeout(() => {
       // return an error object with the following error message

@@ -7,13 +7,14 @@
 <body>
 <script>
   const nick = Symbol('Nick')
-
+  console.log(nick)
   // in this instance, the first Olivia object will be overwritten
   const classRoom = {
     'Mark': {grade: 50, gender: 'male'},
     'Olivia': {grade: 80, gender: 'female'},
     'Olivia': {grade: 70, gender: 'female'},
   }
+  console.log(classRoom)
 
   const symbolClassRoom = {
     [Symbol('Mark')]: {grade: 50, gender: 'male'},
