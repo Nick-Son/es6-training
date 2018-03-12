@@ -21,5 +21,5 @@ Currently showing as of 1/5/17
 Run this instead: 
 
 ```
-npm install -g eslint-config-airbnb eslint-plugin-jsx-a11y@^2.2.3 eslint-plugin-import eslint-plugin-react
+npm install -g eslint-config-airbnb eslint-plugin-import eslint-plugin-react
 ```
