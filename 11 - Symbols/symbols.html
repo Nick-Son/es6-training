@@ -6,22 +6,28 @@
 </head>
 <body>
 <script>
-  const wes = Symbol('Wes');
-  const person = Symbol('Wes');
+  const nick = Symbol('Nick')
 
+  // in this instance, the first Olivia object will be overwritten
   const classRoom = {
-    [Symbol('Mark')] : { grade: 50, gender: 'male' },
-    [Symbol('olivia')]: { grade: 80, gender: 'female' },
-    [Symbol('olivia')]: { grade: 80, gender: 'female' },
-  };
-
-  for (const person in classRoom) {
-    console.log(person);
+    'Mark': {grade: 50, gender: 'male'},
+    'Olivia': {grade: 80, gender: 'female'},
+    'Olivia': {grade: 70, gender: 'female'},
   }
 
-  const syms = Object.getOwnPropertySymbols(classRoom);
-  const data = syms.map(sym => classRoom[sym]);
-  console.log(data);
+  const symbolClassRoom = {
+    [Symbol('Mark')]: {grade: 50, gender: 'male'},
+    [Symbol('Olivia')]: {grade: 80, gender: 'female'},
+    [Symbol('Olivia')]: {grade: 70, gender: 'female'},
+  }
+
+  // Symbols aren't innumerable, they can't be looped over
+  // this will create an array out of symbolClassRoom
+  const syms = Object.getOwnPropertySymbols(symbolClassRoom)
+  console.log(syms)
+  // viewing whats logged reveals an array of symbols, but no data
+  const data = syms.map(sym => symbolClassRoom[sym])
+  console.log(data)
 
 </script>
 </body>
