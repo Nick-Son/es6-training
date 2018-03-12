@@ -18,15 +18,21 @@
   //   }, 500);
   // });
 
+  // // running all Promises at once.
   // Promise
   //   .all([weather, tweets])
   //   .then(responses => {
-  //     const [weatherInfo, tweetInfo] = responses;
-  //     console.log(weatherInfo, tweetInfo)
-  //   });
+  //     const [weatherInfo, tweetsInfo] = responses
+  //     const {temp, conditions} = weatherInfo
+  //     const [firstTweet, secondTweet] = tweetsInfo
+  //     console.log('weatherInfo:', temp, conditions)
+  //     console.log('TweetsInfo:', firstTweet, secondTweet)
+
+  //   })
 
   const postsPromise = fetch('http://wesbos.com/wp-json/wp/v2/posts');
   const streetCarsPromise = fetch('http://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+
 
   Promise
     .all([postsPromise, streetCarsPromise])
@@ -34,8 +40,8 @@
       return Promise.all(responses.map(res => res.json()))
     })
     .then(responses => {
-      console.log(responses);
-    });
+      console.log(responses)
+    })
 
 </script>
 </body>
