@@ -26,11 +26,11 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false },
       output: { comments: false },
-      sourcemap: true
+      sourceMap: true
     }),
     // env plugin
     new webpack.DefinePlugin({
-      'process.env': { NODE_ENV: JSON.stringify(nodeEnv) }
+      'process.env': { NODE_ENV: JSON.stringify(nodeEnv)}
     })
   ]
 }
