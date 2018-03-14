@@ -18,22 +18,26 @@
     }
     eat(food) {
       this.belly.push(food);
-      return this.belly;
+      return this.belly;;
     }
   }
 
   class Dog extends Animal {
     constructor(name, breed) {
+      // super needs to be called first, as it will create an instance of animal first.
+      // super will call whatever the class is extending
+      // as name is an attribute of Animal, it doesn't need to be declared in the dog constructor, so it is passed to super
+      // which will define it in the Animal constructor
       super(name);
       this.breed = breed;
     }
     bark() {
-      console.log('Bark bark I\'m a dog');
+      console.log('Bark! Bark!')
     }
   }
 
   const rhino = new Animal('Rhiney');
-  const snickers = new Dog('Snickers', 'King Charles');
+  const buster = new Dog('Buster', 'mini fox-terrier');
 
 </script>
 </body>
