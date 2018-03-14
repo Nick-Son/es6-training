@@ -6,22 +6,39 @@
 </head>
 <body>
 <script>
-  function Dog(name, breed) {
-    this.name = name;
-    this.breed = breed;
+  // as a Class
+  // never serparate class methods with a ','
+  class Character {
+    constructor(name, role) {
+      this.name = name;
+      this.role = role;
+    }
+    heal() {
+      console.log(`${this.name} healed the target for 300hp`);
+    }
+    attack() {
+      console.log(`${this.name} hit the target for 1200hp`);
+    }
+    // can only be called on the Class (Character) not an instance of the class (cleric or druid)
+    static info() {
+      console.log('A character has a name and a role')
+    }
+    // can be called on an instance of a class (no () at the end, eg: cleric.description )
+    get description() {
+      return `${this.name} is a ${this.role}`;
+    }
+    set setNickname(string) {
+      this.nickname = string.trim()
+    }
+    get getNickname() {
+      return this.nickname;
+    }
   }
 
-  Dog.prototype.bark = function() {
-    console.log(`Bark Bark! My name is ${this.name}`);
-  };
+  const cleric = new Character('Vhaali', 'Healer');
+  const druid = new Character('Djiri', 'Healer');
 
-  Dog.prototype.cuddle = function() {
-    console.log(`I love you owner!`);
-  };
-
-  const snickers = new Dog('Snickers', 'King Charles');
-  const sunny = new Dog('Sunny', 'Golden Doodle');
-
+  console.log(cleric)
 </script>
 </body>
 </html>
