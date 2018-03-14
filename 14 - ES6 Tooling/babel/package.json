@@ -9,17 +9,26 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel-cli": "^6.26.0",
+    "babel-cli": "^7.0.0-beta.3",
     "babel-preset-env": "^7.0.0-beta.3"
   },
   "babel": {
     "presets": [
       [
-        "env", {
-        "targets": {
-          "browsers": ["last 2 versions", "safari >= 8"]
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 8"
+            ]
+          }
         }
-      }]
-    ]
+      ]
+    ],
+    "plugin": ["transform-object-rest-spread"]
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
   }
 }
