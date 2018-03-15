@@ -7,7 +7,9 @@
 <body>
 <script>
   class MovieCollection extends Array {
+    // the ...items in the constructor arguments is a rest operator, taking anything passed after the initial arg, into an 'item'
     constructor(name, ...items) {
+      // here, the ...items is a spread operator
       super(...items);
       this.name = name;
     }
@@ -19,14 +21,24 @@
     }
   }
 
-  const movies = new MovieCollection('Wes\'s Fav Movies',
-    { name: 'Bee Movie', stars: 10 },
-    { name: 'Star Wars Trek', stars: 1 },
-    { name: 'Virgin Suicides', stars: 7 },
-    { name: 'King of the Road', stars: 8 }
-  );
+  const movies = new MovieCollection('Nick\s favorite films',
+    { name: 'No Country for Old Men', stars: 8 },
+    { name: 'The Sacrifice', stars: 9 },
+    { name: 'Nostalghia', stars: 7 },
+    { name: 'Once upon a time in Anotolia', stars: 10 },
+  )
 
-  movies.add({ name: 'Titanic', stars: 5 });
+  // if we iterate over the array using ' for in', it will also iterate over the name property and also
+  // just return the index of each movie
+  for (const movie in movies) {
+    console.log(movie)
+  }
+
+  // if we wanted to iterate over this array excluding the name , we would have to use:
+  // for of, only iterates over items with iteratable properties of an object.
+  for (const movie of movies) {
+    console.log(movie);
+  }
 
 </script>
 </body>
