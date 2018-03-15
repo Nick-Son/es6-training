@@ -8,6 +8,7 @@
 <script>
   const phoneHandler = {
     set(target, name, value) {
+      // phoneNumbers.mobile = 01234567
       target[name] = value.match(/[0-9]/g).join('');
     },
     get(target, name) {
@@ -15,7 +16,9 @@
     }
   }
 
+  // here, we are starting with an empty object, through use, we will add to it using the set() method
   const phoneNumbers = new Proxy({}, phoneHandler);
+
 </script>
 </body>
 </html>
