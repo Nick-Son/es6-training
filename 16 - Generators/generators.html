@@ -6,7 +6,14 @@
 </head>
 <body>
 <script>
-  function* listPeople() {
+  function* listCharacters() {
+    yield 'Vharde';
+    yield 'Vhaali';
+    yield 'Djiri';
+  }
+
+  function* counter() {
+    // i is scoped to the counter function. It will keep it's value until the function is finished
     let i = 0;
     yield i;
     i++;
@@ -15,7 +22,13 @@
     yield i;
   }
 
-  const people = listPeople();
+  // to use a generator function, you need to invoke the function and strore it in a variable
+  const toons = listCharacters()
+
+  // to call the function and step through the different yield statements, we call .next() on the variable eg:
+  // toons.next()
+
+  const count = counter();
 
   const inventors = [
     { first: 'Albert', last: 'Einstein', year: 1879 },
@@ -28,14 +41,13 @@
   ];
 
   function* loop(arr) {
-    console.log(inventors);
+    // this will create a yield for each item in the array that the function is passed
     for (const item of arr) {
       yield item;
     }
   }
 
   const inventorGen = loop(inventors);
-
 
 </script>
 </body>
