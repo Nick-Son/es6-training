@@ -7,26 +7,29 @@
 <body>
 <script>
 
+  // For an explanation on this code, rewatch video 56 //
+
+
   function ajax(url) {
     fetch(url).then(data => data.json()).then(data => dataGen.next(data))
   }
 
   function* steps() {
-    console.log('fetching beers');
+    console.log('fetching beer data:');
     const beers = yield ajax('http://api.react.beer/v2/search?q=hops&type=beer');
     console.log(beers);
 
-    console.log('fetching wes');
-    const wes = yield ajax('https://api.github.com/users/wesbos');
-    console.log(wes);
+    console.log('fetching Github data:');
+    const nick = yield ajax('https://api.github.com/users/Nick-Son');
+    console.log(nick);
 
-    console.log('fetching fat joe');
+    console.log('fetching music data:');
     const fatJoe = yield ajax('https://api.discogs.com/artists/51988');
     console.log(fatJoe);
   }
 
-  const dataGen = steps();
-  dataGen.next(); // kick it off
+  const dataGen = steps()
+  dataGen.next() // start the process
 
 </script>
 </body>
