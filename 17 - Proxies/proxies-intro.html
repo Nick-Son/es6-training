@@ -6,20 +6,22 @@
 </head>
 <body>
 <script>
-  const person = { name: 'Wes', age: 100 };
+// Proxies allow you to overwrite the default behavior for many of an object's default operations
+  const person = { name: 'Nick', age: 34 }
+  // a proxy takes 2 things, the object you want to proxy, and the handler
   const personProxy = new Proxy(person, {
     get(target, name) {
-      // console.log('someone is asking for ', target, name);
+      // console.log('Someone is asking for', target, name)
       return target[name].toUpperCase();
     },
     set(target, name, value) {
       if(typeof value === 'string') {
-        target[name] = value.trim().toUpperCase() + '✂️';
+        target[name] = value.trim()
       }
     }
-  });
+  }) 
 
-  personProxy.name = 'Wesley';
+  personProxy.name = 'Nikolai'
 </script>
 </body>
 </html>
