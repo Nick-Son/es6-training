@@ -9,7 +9,11 @@
   let dog1 = { name: 'Snickers', age: 3 };
   let dog2 = { name: 'sunny', age: 1 };
 
+  // a WeakSet can only ever contain objects, you also can't loop over a WeakSet.
   const weakSauce = new WeakSet([dog1, dog2]);
+
+  // WeakSet's also lack a clear() function. This is because they clean themselves up.
+  // This has to do with 'garbage collection' in regards to memory
 
   console.log(weakSauce);
   dog1 = null;
