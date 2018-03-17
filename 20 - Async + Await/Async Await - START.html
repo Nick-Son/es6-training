@@ -16,18 +16,28 @@
       })
     }
 
-    async function go() {
-      console.log('start');
+    // Higher order function: a function where you pass a function to it and it returns a new function
+    function catchErrors(fn) {
+      return function(...args) {
+        return fn(...args).catch((err) => console.error(err))
+      }
+    }
+
+    async function go(name, last) {
+      console.log(`Starting for ${name} ${last}`);
       const res1 = await breathe(1500);
       console.log(res1)
-      const res2 = await breathe(800);
+      const res2 = await breathe(400);
       console.log(res2)
       const res3 = await breathe(900);
       console.log(res3)
+      console.log('End')
     }
 
-    go();
+    // A wrapped function 
+    const wrappedFunction = catchErrors(go)
 
+    wrappedFunction('Nick', 'Sonner')
   </script>
 </body>
 
