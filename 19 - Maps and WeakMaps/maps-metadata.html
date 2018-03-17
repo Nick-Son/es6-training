@@ -19,6 +19,10 @@
 <button>Dancer 💃</button>
 
 <script>
+  // A benefit of using a Map over a regular object is that you can use an object as a key in a map.
+  // It can be used a kind of metadata dictionary where it holds information about an object, but doesn't necessatily put information on that object.
+
+  // A good usecase for using a Map is when you want to store information about an object, not in the object
   const clickCounts = new Map();
   const buttons = document.querySelectorAll('button');
 
@@ -28,8 +32,9 @@
       const val = clickCounts.get(this);
       clickCounts.set(this, val + 1);
       console.log(clickCounts);
-    });
-  });
+    })
+  })
+
 </script>
 </body>
 </html>
