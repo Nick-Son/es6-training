@@ -8,9 +8,24 @@
 <body>
   <script>
     async function go() {
-      const p1 = fetch('https://api.github.com/users/wesbos');
-      const p2 = fetch('https://api.github.com/users/stolinski');
+      const promise1 = fetch('https://api.github.com/users/wesbos');
+      const promise2 = fetch('https://api.github.com/users/Nick-Son');
+
+      // As the promises above won't return usable data (json), we can add .then(res => res.json()) to the end like below
+
+      // const promise1 = fetch('https://api.github.com/users/wesbos').then(res => res.json());
+      // const promise2 = fetch('https://api.github.com/users/Nick-Son').then(res => res.json());
+      
+      // to wait for both of them to come back, we wrap them both in a new promise
+      const res = await Promise.all([promise1, promise2])
+      // with dataPromises below, it itself is a promise, as it is just the res variable (Promise.all), having a map called on it
+      const dataPromises = res.map(r => r.json())
+      // we now need to call the promise and store the returned data in two variables, using destructuring
+      const [wes, nick] = await Promise.all(dataPromises)
+      console.log('W:', wes, 'N:', nick)
+      
     }
+
 
     go();
   </script>
