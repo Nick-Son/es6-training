@@ -15,12 +15,14 @@
     //   console.error(err)
     // });
 
+    // this function returns a promise
     function getCurrentPosition() {
       return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject)
       })
     }
-
+    
+    // This is an asyncronous function that stores the reponse of getCurrentPosition in the variable pos
     async function go() {
       const pos = await getCurrentPosition();
       console.log(pos)
