@@ -12,11 +12,11 @@
       constructor(name, breed) {
         this.name = name;
         this.breed = breed;
+        this.barks = 0;
       }
-      barks = 0;
 
       bark() {
-        console.log(`Bark Bark! My name is ${this.name}`);
+        // console.log(`Bark Bark! My name is ${this.name}`);
         this.barks = this.barks + 1;
         console.log(this.barks);
       }
